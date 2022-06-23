@@ -35,7 +35,7 @@ const CrudsOperation = () => {
     console.log(`Todo phone: ${phone}`);
     try {
       await axios
-        .post("http://localhost:8000/todo/add", newRecord)
+        .post("https://cruds-by-faheem.herokuapp.com/add", newRecord)
         .then(() => toast.success("Record added successfully"));
       setName("");
       setAddress("");

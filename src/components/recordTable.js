@@ -35,14 +35,16 @@ const RecordTable = () => {
       phone: phone,
     };
     await axios
-      .post("http://localhost:8000/todo/add", newRecord)
+      .post("https://cruds-by-faheem.herokuapp.com/add", newRecord)
       .then((res) => console.log("record added successfully"));
   };
 
   const deleteRecord = async (item) => {
     console.log("item", item);
     try {
-      await axios.delete(`http://localhost:8000/todo/delete/${item}`);
+      await axios.delete(
+        `https://cruds-by-faheem.herokuapp.com/delete/${item}`
+      );
       setModalDelete(false);
       toast.success("Record deleted Scuccessfully");
       getAllRecords();
@@ -76,7 +78,10 @@ const RecordTable = () => {
       console.log("itemId", itemId);
 
       await axios
-        .patch(`http://localhost:8000/todo/update/${itemId}`, newRecord)
+        .patch(
+          `https://cruds-by-faheem.herokuapp.com/update/${itemId}`,
+          newRecord
+        )
         .then("record updated successfully");
       setModalShow(false);
       toast.success("Record Updated successfully");
@@ -86,10 +91,12 @@ const RecordTable = () => {
     }
   };
   const getAllRecords = async () => {
-    await axios.get("http://localhost:8000/todo/getAllTodos").then((res) => {
-      console.log(res);
-      setRecord(res.data);
-    });
+    await axios
+      .get("https://cruds-by-faheem.herokuapp.com/getAllTodos")
+      .then((res) => {
+        console.log(res);
+        setRecord(res.data);
+      });
   };
   useEffect(() => {
     getAllRecords();
