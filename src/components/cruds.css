@@ -5,7 +5,7 @@
 }
 .form {
   padding: 40px 40px;
-  width: 500px;
+  min-width: 500px;
   border-radius: 20px;
 }
 .tableContainer {
@@ -19,6 +19,9 @@
     background-color: rgb(248, 191, 117);
     min-width: 300px;
     min-height: 300px;
+  }
+  .tableContainer {
+    padding: 0px;
   }
 }
 .formContainer {

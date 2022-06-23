@@ -116,7 +116,7 @@ const RecordTable = () => {
                   Name
                 </th>
                 <th scope="col" className="">
-                  Phone #
+                  Ph #
                 </th>
                 <th scope="col" className="">
                   Address
